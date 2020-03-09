@@ -11,3 +11,4 @@ data class Wallet(var balance: Double){
     }
 
 }
+

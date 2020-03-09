@@ -2,6 +2,9 @@ package com.example.coinapp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
+
 
 class WalletUnitTest {
 
@@ -26,6 +29,16 @@ class WalletUnitTest {
         val wallet = Wallet(10.00)
         wallet.withdraw(10.00)
         assertEquals(0.00, wallet.balance, 0.001)
+    }
+
+
+    @Test
+    @Throws(java.lang.Exception::class)
+    fun testWalletContent() {
+        val authActivity = mock(AuthActivity::class.java)
+        `when`(authActivity.getUserToken()).thenReturn("FakeToken")
+        val token = authActivity.getUserToken()
+        // Test token
     }
 
 }
